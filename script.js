@@ -14,3 +14,15 @@ function criaQuadro(tamanho) {
     }
 }
 criaQuadro('5');
+
+function selected(){
+    document.getElementById('color-black').className = 'color';
+    document.getElementById('color-gray').className = 'color';
+    document.getElementById('color-gold').className = 'color';
+    document.getElementById('color-yellow').className = 'color';
+    if( event.target.id != "color-palette" && event.target.className != 'color selected'){
+        event.target.className = 'color selected';
+    }
+}
+let cor = document.getElementById('color-palette');
+cor.addEventListener('click', selected);
