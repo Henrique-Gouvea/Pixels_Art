@@ -48,8 +48,24 @@ createButton();
 function clearPixels(){
     let pixel = document.getElementsByClassName('pixel');
     for (let i = 0; i < pixel.length; i += 1){
-        pixel[i].id = null;
+        pixel[i].id = 'white';
     }
 }
 let clear = document.getElementById("clear-board");
 clear.addEventListener('click', clearPixels);
+
+function newColor(){
+    let gray = document.getElementById('color-gray').style.backgroundColor = gerar_cor();
+    let gold = document.getElementById('color-gold').style.backgroundColor = gerar_cor();
+    let yellow = document.getElementById('color-yellow').style.backgroundColor = gerar_cor();
+}
+
+newColor();
+
+function gerar_cor() { 
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+    
+    return `rgb(${r}, ${g}, ${b})`;
+ }//funcao gerar_cor pego pronto do link : https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript, ele usar o math.random para gerar um numero aleatorio, e multiplica por 255 para limita-lo de 0 a 255;
