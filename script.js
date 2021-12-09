@@ -5,17 +5,12 @@
 // bodyPrinc.appendChild(h1);
 
 function criaQuadro(tamanho) {
+    tamanho = tamanho * tamanho;
     let line1 = document.getElementById('pixel-board');
     for(let i = 0; i < tamanho; i += 1) {
         let div = document.createElement('div');
         div.className = 'pixel';
         line1.appendChild(div);
     }
-    // for(let i = 0; i < tamanho; i += 1) {
-    //     let div = document.createElement('div');
-    //     div.className = 'pixel';
-    //     line2.appendChild(div);
-    // }
 }
-
-criaQuadro('25');
+criaQuadro('5');

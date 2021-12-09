@@ -26,9 +26,11 @@
 .pixel{
     background-color: white;
     border: 1px solid black;
-    width: 25px;
-    padding: 50px;
-    margin-top: 50px;
-    margin-left: 5px;
+    height: 40px;
+    width: 40px;
     display: inline-block;
+}
+
+#pixel-board{
+    width: 250px;
 }
