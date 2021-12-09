@@ -5,18 +5,17 @@
 // bodyPrinc.appendChild(h1);
 
 function criaQuadro(tamanho) {
-    let line1 = document.getElementById('line1');
-    let line2 = document.getElementById('line2');
+    let line1 = document.getElementById('pixel-board');
     for(let i = 0; i < tamanho; i += 1) {
         let div = document.createElement('div');
         div.className = 'pixel';
         line1.appendChild(div);
     }
-    for(let i = 0; i < tamanho; i += 1) {
-        let div = document.createElement('div');
-        div.className = 'pixel';
-        line2.appendChild(div);
-    }
+    // for(let i = 0; i < tamanho; i += 1) {
+    //     let div = document.createElement('div');
+    //     div.className = 'pixel';
+    //     line2.appendChild(div);
+    // }
 }
 
-criaQuadro('5');
+criaQuadro('25');
