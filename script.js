@@ -15,7 +15,7 @@ function criaQuadro(tamanho) {
 }
 criaQuadro('5');
 
-function selected(){
+function selected() {
     document.getElementById('color-black').className = 'color';
     document.getElementById('color-gray').className = 'color';
     document.getElementById('color-gold').className = 'color';
@@ -27,7 +27,7 @@ function selected(){
 let cor = document.getElementById('color-palette');
 cor.addEventListener('click', selected);
 
-function changeColor(){
+function changeColor() {
     let colorSelect = document.getElementsByClassName('color selected');
     console.log(colorSelect[0].id);
     event.target.id = colorSelect[0].id;
@@ -35,3 +35,21 @@ function changeColor(){
 
 let pixelSelect = document.getElementById("pixel-board");
 pixelSelect.addEventListener('click', changeColor);
+
+function createButton(){
+    let button = document.createElement("button");
+    button.innerText = 'Limpar';
+    button.id = 'clear-board';
+    let divButton = document.getElementById('divButton');
+    divButton.appendChild(button);
+}
+createButton();
+
+function clearPixels(){
+    let pixel = document.getElementsByClassName('pixel');
+    for (let i = 0; i < pixel.length; i += 1){
+        pixel[i].id = null;
+    }
+}
+let clear = document.getElementById("clear-board");
+clear.addEventListener('click', clearPixels);
