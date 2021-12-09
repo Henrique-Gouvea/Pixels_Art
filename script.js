@@ -26,3 +26,12 @@ function selected(){
 }
 let cor = document.getElementById('color-palette');
 cor.addEventListener('click', selected);
+
+function changeColor(){
+    let colorSelect = document.getElementsByClassName('color selected');
+    console.log(colorSelect[0].id);
+    event.target.id = colorSelect[0].id;
+}
+
+let pixelSelect = document.getElementById("pixel-board");
+pixelSelect.addEventListener('click', changeColor);
