@@ -96,8 +96,21 @@ function gerar_cor() {
 function buttonInput(){
     let inputValue = document.getElementById('board-size').value;
     document.getElementById('pixel-board').innerText = '';
-    criaQuadro(regraTres(inputValue));
+    console.log(inputValue);
+    console.log(menorMaior(inputValue));
+    criaQuadro(regraTres(menorMaior(inputValue)));
 }
 
  document.getElementById('generate-board').addEventListener('click', buttonInput);
  
+function menorMaior(valor){
+    if(valor < 5){
+        return '5';
+    }
+    else if(valor > 50){
+        return '50';
+    }
+    else{
+        return valor;
+    }
+}
