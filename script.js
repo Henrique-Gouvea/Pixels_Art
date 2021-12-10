@@ -3,6 +3,10 @@
 // h1.innerText = 'Paleta de Cores';
 // let bodyPrinc = document.querySelector('body');
 // bodyPrinc.appendChild(h1);
+let black = document.getElementById('color-black').style.backgroundColor = 'black'
+let gray = document.getElementById('color-gray').style.backgroundColor = gerar_cor();
+gold = document.getElementById('color-gold').style.backgroundColor = gerar_cor();
+yellow = document.getElementById('color-yellow').style.backgroundColor = gerar_cor();
 
 function criaQuadro(tamanho) {
     tamanho = tamanho * tamanho;
@@ -29,8 +33,8 @@ cor.addEventListener('click', selected);
 
 function changeColor() {
     let colorSelect = document.getElementsByClassName('color selected');
-    console.log(colorSelect[0].id);
-    event.target.id = colorSelect[0].id;
+    //console.log(colorSelect[0].style.backgroundColor);
+    event.target.style.backgroundColor = colorSelect[0].style.backgroundColor;
 }
 
 let pixelSelect = document.getElementById("pixel-board");
@@ -48,19 +52,19 @@ createButton();
 function clearPixels(){
     let pixel = document.getElementsByClassName('pixel');
     for (let i = 0; i < pixel.length; i += 1){
-        pixel[i].id = 'white';
+        pixel[i].style.backgroundColor = 'white';
     }
 }
 let clear = document.getElementById("clear-board");
 clear.addEventListener('click', clearPixels);
 
-function newColor(){
-    let gray = document.getElementById('color-gray').style.backgroundColor = gerar_cor();
-    let gold = document.getElementById('color-gold').style.backgroundColor = gerar_cor();
-    let yellow = document.getElementById('color-yellow').style.backgroundColor = gerar_cor();
-}
+// function newColor(){
+//     let gray = document.getElementById('color-gray').style.backgroundColor = gerar_cor();
+//     let gold = document.getElementById('color-gold').style.backgroundColor = gerar_cor();
+//     let yellow = document.getElementById('color-yellow').style.backgroundColor = gerar_cor();
+// }
 
-newColor();
+// newColor();
 
 function gerar_cor() { 
     let r = Math.random() * 255;
@@ -68,4 +72,4 @@ function gerar_cor() {
     let b = Math.random() * 255;
     
     return `rgb(${r}, ${g}, ${b})`;
- }//funcao gerar_cor pego pronto do link : https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript, ele usar o math.random para gerar um numero aleatorio, e multiplica por 255 para limita-lo de 0 a 255;
+ }//funcao gerar_cor pego pronto do link : https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript, ele usa o math.random para gerar um numero aleatorio, e multiplica por 255 para limita-lo de 0 a 255;
