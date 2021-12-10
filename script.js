@@ -18,7 +18,11 @@ function criaQuadro(tamanho) {
         line1.appendChild(div);
     }
 }
-criaQuadro('5');
+
+let valorEntrada = '5';
+let regraTres = (210*valorEntrada)/5;
+document.getElementById('pixel-board').style.width = regraTres + 'px';
+criaQuadro(valorEntrada);
 
 function selected() {
     document.getElementById('color-black').className = 'color';
@@ -48,7 +52,7 @@ function createButton(text, ident, dadId){
     let divButton = document.getElementById(dadId);
     divButton.appendChild(button);
 }
-createButton('limpar', 'clear-board', 'divButton');
+createButton('Limpar', 'clear-board', 'divButton');
 
 function clearPixels(){
     let pixel = document.getElementsByClassName('pixel');
@@ -76,3 +80,4 @@ function gerar_cor() {
  }//funcao gerar_cor pego pronto do link : https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript, ele usa o math.random para gerar um numero aleatorio, e multiplica por 255 para limita-lo de 0 a 255;
 
  createButton('VQV', 'generate-board', 'inputBut');
+
