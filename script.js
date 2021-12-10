@@ -5,11 +5,11 @@
 // bodyPrinc.appendChild(h1);
 
 let inputValor = document.createElement("input");
-let inputBut = document.getElementById('inputBut');
+let divButton = document.getElementById('divButton');
 inputValor.type = 'number';
 inputValor.id = 'board-size';
 inputValor.min = '5';
-inputBut.appendChild(inputValor);
+divButton.appendChild(inputValor);
 
 
 let black = document.getElementById('color-black').style.backgroundColor = 'black'
@@ -91,7 +91,7 @@ function gerar_cor() {
     return `rgba(${r}, ${g}, ${b})`;
  }//funcao gerar_cor pego pronto do link : https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript, ele usa o math.random para gerar um numero aleatorio, e multiplica por 255 para limita-lo de 0 a 255;
 
- createButton('VQV', 'generate-board', 'inputBut');
+ createButton('VQV', 'generate-board', 'divButton');
 
 function buttonInput(){
     let inputValue = document.getElementById('board-size').value;
