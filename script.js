@@ -8,7 +8,7 @@ let inputValor = document.createElement("input");
 let divButton = document.getElementById('divButton');
 inputValor.type = 'number';
 inputValor.id = 'board-size';
-inputValor.min = '5';
+inputValor.min = '1';
 divButton.appendChild(inputValor);
 
 
@@ -95,10 +95,13 @@ function gerar_cor() {
 
 function buttonInput(){
     let inputValue = document.getElementById('board-size').value;
-    document.getElementById('pixel-board').innerText = '';
-    console.log(inputValue);
-    console.log(menorMaior(inputValue));
-    criaQuadro(regraTres(menorMaior(inputValue)));
+    if(inputValue>0){
+        document.getElementById('pixel-board').innerText = '';
+        criaQuadro(regraTres(menorMaior(inputValue)));
+    }
+    else{
+        alert("Board inválido!");
+    }
 }
 
  document.getElementById('generate-board').addEventListener('click', buttonInput);
