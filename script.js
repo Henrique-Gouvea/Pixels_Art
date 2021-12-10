@@ -3,6 +3,7 @@
 // h1.innerText = 'Paleta de Cores';
 // let bodyPrinc = document.querySelector('body');
 // bodyPrinc.appendChild(h1);
+
 let black = document.getElementById('color-black').style.backgroundColor = 'black'
 let gray = document.getElementById('color-gray').style.backgroundColor = gerar_cor();
 gold = document.getElementById('color-gold').style.backgroundColor = gerar_cor();
@@ -40,14 +41,14 @@ function changeColor() {
 let pixelSelect = document.getElementById("pixel-board");
 pixelSelect.addEventListener('click', changeColor);
 
-function createButton(){
+function createButton(text, ident, dadId){
     let button = document.createElement("button");
-    button.innerText = 'Limpar';
-    button.id = 'clear-board';
-    let divButton = document.getElementById('divButton');
+    button.innerText = text;
+    button.id = ident;
+    let divButton = document.getElementById(dadId);
     divButton.appendChild(button);
 }
-createButton();
+createButton('limpar', 'clear-board', 'divButton');
 
 function clearPixels(){
     let pixel = document.getElementsByClassName('pixel');
@@ -66,10 +67,12 @@ clear.addEventListener('click', clearPixels);
 
 // newColor();
 
-function gerar_cor() { 
+function gerar_cor() {
     let r = Math.random() * 255;
     let g = Math.random() * 255;
     let b = Math.random() * 255;
     
-    return `rgb(${r}, ${g}, ${b})`;
+    return `rgba(${r}, ${g}, ${b})`;
  }//funcao gerar_cor pego pronto do link : https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript, ele usa o math.random para gerar um numero aleatorio, e multiplica por 255 para limita-lo de 0 a 255;
+
+ createButton('VQV', 'generate-board', 'inputBut');
