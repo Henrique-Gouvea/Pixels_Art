@@ -4,6 +4,14 @@
 // let bodyPrinc = document.querySelector('body');
 // bodyPrinc.appendChild(h1);
 
+let inputValor = document.createElement("input");
+let inputBut = document.getElementById('inputBut');
+inputValor.type = 'number';
+inputValor.id = 'board-size';
+inputValor.min = '5';
+inputBut.appendChild(inputValor);
+
+
 let black = document.getElementById('color-black').style.backgroundColor = 'black'
 let gray = document.getElementById('color-gray').style.backgroundColor = gerar_cor();
 gold = document.getElementById('color-gold').style.backgroundColor = gerar_cor();
@@ -19,10 +27,14 @@ function criaQuadro(tamanho) {
     }
 }
 
-let valorEntrada = '5';
-let regraTres = (210*valorEntrada)/5;
-document.getElementById('pixel-board').style.width = regraTres + 'px';
-criaQuadro(valorEntrada);
+
+function regraTres(valorEntrada){
+    let regraTres = (210*valorEntrada)/5;
+    document.getElementById('pixel-board').style.width = regraTres + 'px';
+    return valorEntrada;
+}
+
+criaQuadro(regraTres('5'));
 
 function selected() {
     document.getElementById('color-black').className = 'color';
@@ -81,3 +93,11 @@ function gerar_cor() {
 
  createButton('VQV', 'generate-board', 'inputBut');
 
+function buttonInput(){
+    let inputValue = document.getElementById('board-size').value;
+    document.getElementById('pixel-board').innerText = '';
+    criaQuadro(regraTres(inputValue));
+}
+
+ document.getElementById('generate-board').addEventListener('click', buttonInput);
+ 
